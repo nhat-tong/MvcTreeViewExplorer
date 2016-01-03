@@ -1,0 +1,29 @@
+﻿@model MvcTreeViewExplorer.Areas.Explorer.ViewModels.ExplorerViewModel
+
+@{
+    ViewBag.Title = "TreeView Explorer";
+}
+
+<h4>Liste des items</h4>
+<div class="row">
+    @if (Model != null)
+    {
+        <div id="treeViewLeftCol" class="col-md-2 col-lg-4 leftcol" style="display:none">
+            <ul>
+                @Html.Partial("~/Areas/Explorer/Views/TreeView/_TreeView.cshtml", Model)
+            </ul>
+        </div>
+    }
+    <div id="ajaxContent" class="col-md-10 col-lg-8 rightcol"></div>
+</div>
+
+@Html.Script(
+    @<script>
+        var tree = new TreeView({
+            checkbox: false,
+            multiselection: false,
+            treeSelector: '@Model.Id'
+        });
+        tree.initialize();
+    </script>
+)

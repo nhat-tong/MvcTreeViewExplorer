@@ -1,0 +1,49 @@
+﻿@using MvcTreeViewExplorer.Areas.Explorer.Models
+@model MvcTreeViewExplorer.Areas.Explorer.ViewModels.ExplorerViewModel
+
+@helper ShowItem(IExplorerItem item, bool isShowDetail)
+{
+    <li id="@item.Path" title="@item.Name" class="@(item.IsFolder ? "folder": "")">
+        <span>
+            <span class="picto"></span>
+            @if (item.IsFolder)
+            {
+                @Ajax.ActionLink(item.Name, "_ViewItemDetails", "TreeView", new { path = item.Path }, new AjaxOptions { OnBegin = "", OnComplete = "", HttpMethod = "Get", UpdateTargetId = "ajaxContent" })
+            }
+            else
+            {
+                <span>@item.Name</span>
+            }
+        </span>
+
+        @if (item.ChildItems != null && !isShowDetail)
+        {
+            <ul>
+                @foreach (var child in item.ChildItems)
+                {
+                    @ShowExplorerItem(child)
+                }
+            </ul>
+        }
+    </li>
+}
+
+@helper ShowExplorerItem(IExplorerItem item)
+{
+if (Model.IsRootActive)
+{
+        @ShowItem(item, false)
+}
+else
+{
+    if (item.ChildItems != null)
+    {
+        foreach (var child in item.ChildItems)
+        {
+           @ShowItem(child, true)
+        }
+    }
+}
+}
+
+@ShowExplorerItem(Model.Root)
