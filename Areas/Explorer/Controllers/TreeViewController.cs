@@ -21,7 +21,7 @@ namespace MvcTreeViewExplorer.Areas.Explorer.Controllers
             return View(new ExplorerViewModel {
                 Root = _explorerBll.GetItemsByPath(@"D:\NHAT\ELMAH"),
                 IsRootActive = true,
-                Id = "#treeViewLeftCol"
+                Id = "treeViewLeftCol"
             });
         }
 
@@ -35,7 +35,7 @@ namespace MvcTreeViewExplorer.Areas.Explorer.Controllers
             return PartialView(new ExplorerViewModel {
                 Root = _explorerBll.GetItemsByPath(path),
                 IsRootActive = false,
-                Id = "#treeViewRightCol"
+                Id = "treeViewRightCol"
             });
         }
 
@@ -50,7 +50,7 @@ namespace MvcTreeViewExplorer.Areas.Explorer.Controllers
             {
                 Root = _explorerBll.GetItemsByPath(path),
                 IsRootActive = false,
-                Id = "#treeViewRightCol"
+                Id = "treeViewRightCol"
             });
         }
     }

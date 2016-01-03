@@ -1,27 +1,27 @@
 ﻿/* Ref: https://github.com/mar10/fancytree/wiki/TutorialLoadData*/
 
 var TreeView = (function () {
-
-    function TreeView(options) {
-        this.config = $.extend({}, this.defaults, options);
-    }
-
+    // Define TreeView class
     TreeView.prototype = {
-        defaults: {
+        properties: {
             checkbox: false,
             multiselection: false,
-            treeSelector: "",
+            treeId: "",
         },
         config: {},
-        isInitializing: true,
         initialize: initialize
     };
+
+    //Constructor
+    function TreeView(options) {
+        this.config = $.extend({}, this.properties, options);
+    }
     
     function initialize() {
         var that = this,
-            $tree = $(that.config.treeSelector);
+            $tree = $(that.config.treeId);
 
-        // Initialize the tree
+        // Initialize the fancytree
         var fancytreeConfig = {
             minExpandLevel: 2,
             checkbox: that.config.checkbox,
@@ -29,17 +29,9 @@ var TreeView = (function () {
             debugLevel: 0
         };
 
-        // Create fancytree from HTML Markup inside $tree and configuration from fancytreeConfig
         $tree.fancytree(fancytreeConfig);
-
-        // Display tree when it's available
         $tree.removeAttr("style");
-
-        // Get tree instance
-        var tree = $tree.fancytree("getTree");
-
-        // Initialization finished
-        that.isInitializing = false;
+        //$tree.fancytree("getTree");
     }
 
     return TreeView;

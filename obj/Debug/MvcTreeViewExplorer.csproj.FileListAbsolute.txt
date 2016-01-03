@@ -37,4 +37,3 @@ D:\NHAT\MVC\MvcTreeViewExplorer\bin\WebGrease.dll
 D:\NHAT\MVC\MvcTreeViewExplorer\bin\Antlr3.Runtime.pdb
 D:\NHAT\MVC\MvcTreeViewExplorer\bin\Newtonsoft.Json.xml
 D:\NHAT\MVC\MvcTreeViewExplorer\bin\System.Web.Optimization.xml
-D:\NHAT\MVC\MvcTreeViewExplorer\obj\Debug\MvcTreeViewExplorer.csprojResolveAssemblyReference.cache

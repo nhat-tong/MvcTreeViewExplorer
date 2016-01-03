@@ -8,7 +8,7 @@
 <div class="row">
     @if (Model != null)
     {
-        <div id="treeViewLeftCol" class="col-md-2 col-lg-4 leftcol" style="display:none">
+        <div id="@Model.Id" class="col-md-2 col-lg-4 leftcol" style="display:none">
             <ul>
                 @Html.Partial("~/Areas/Explorer/Views/TreeView/_TreeView.cshtml", Model)
             </ul>
@@ -22,7 +22,7 @@
         var tree = new TreeView({
             checkbox: false,
             multiselection: false,
-            treeSelector: '@Model.Id'
+            treeId: '#@Model.Id'
         });
         tree.initialize();
     </script>
