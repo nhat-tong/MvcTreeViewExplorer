@@ -25,9 +25,29 @@ namespace MvcTreeViewExplorer.Areas.Explorer.Controllers
             });
         }
 
-        public ActionResult _ViewItemDetails(string path)
+        /// <summary>
+        /// View item details (List)
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public ActionResult _ViewListItemDetails(string path)
         {
             return PartialView(new ExplorerViewModel {
+                Root = _explorerBll.GetItemsByPath(path),
+                IsRootActive = false,
+                Id = "#treeViewRightCol"
+            });
+        }
+
+        /// <summary>
+        /// View item details (Tree)
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public ActionResult _ViewTreeItemDetails(string path)
+        {
+            return PartialView(new ExplorerViewModel
+            {
                 Root = _explorerBll.GetItemsByPath(path),
                 IsRootActive = false,
                 Id = "#treeViewRightCol"

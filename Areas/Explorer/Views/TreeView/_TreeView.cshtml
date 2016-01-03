@@ -8,7 +8,7 @@
             <span class="picto"></span>
             @if (item.IsFolder)
             {
-                @Ajax.ActionLink(item.Name, "_ViewItemDetails", "TreeView", new { path = item.Path }, new AjaxOptions { OnBegin = "", OnComplete = "", HttpMethod = "Get", UpdateTargetId = "ajaxContent" })
+                @Ajax.ActionLink(item.Name, "_ViewListItemDetails", "TreeView", new { path = item.Path }, new AjaxOptions { OnBegin = "", OnComplete = "", HttpMethod = "Get", UpdateTargetId = "viewDetail" })
             }
             else
             {

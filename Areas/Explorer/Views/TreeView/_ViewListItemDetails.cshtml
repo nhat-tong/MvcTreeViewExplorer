@@ -1,0 +1,40 @@
+﻿@using MvcTreeViewExplorer.Areas.Explorer.Models
+@model MvcTreeViewExplorer.Areas.Explorer.ViewModels.ExplorerViewModel
+
+@if (Model.Root.ChildItems != null)
+{
+<div id="treeViewRightCol">
+   <table class="table table-hover table-striped table-responsive">
+       <thead>
+           <tr>
+               <td>Nom</td>
+               <td>Modifié Date</td>
+               <td>Type</td>
+               <td>Taille</td>
+           </tr>
+       </thead>
+       <tbody>
+           @foreach (var child in Model.Root.ChildItems)
+           {
+            <tr>
+                <td>
+                    <span class="@(child.IsFolder ? "folder": "")">
+                        @if (child.IsFolder)
+                        {
+                            @Ajax.ActionLink(child.Name, "_ViewListItemDetails", "TreeView", new { path = child.Path }, new AjaxOptions { OnBegin = "", OnComplete = "", HttpMethod = "Get", UpdateTargetId = "viewDetail" })
+                        }
+                        else
+                        {
+                            <span>@child.Name</span>
+                        }
+                    </span>
+                </td>
+                <td>@child.ModifiedDate.ToString()</td>
+                <td>@child.Type</td>
+                <td>@(!child.IsFolder ? ((FileItem)child).Size.ToString() : "")</td>
+            </tr>
+           }
+       </tbody>
+   </table>
+</div>
+}

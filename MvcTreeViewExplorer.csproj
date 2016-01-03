@@ -115,10 +115,11 @@
     <Content Include="Content\fancytree\ui.fancytree.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\boostrap\bootstrap.js" />
-    <Content Include="Scripts\boostrap\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.min.js" />
     <Content Include="Areas\Explorer\Views\TreeView\_TreeView.cshtml" />
-    <Content Include="Areas\Explorer\Views\TreeView\_ViewItemDetails.cshtml" />
+    <Content Include="Areas\Explorer\Views\TreeView\_ViewListItemDetails.cshtml" />
+    <Content Include="Areas\Explorer\Views\TreeView\_ViewTreeItemDetails.cshtml" />
     <None Include="Scripts\jquery\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fancytree\jquery.fancytree-all.js" />
     <Content Include="Scripts\fancytree\jquery.fancytree-all.min.js" />

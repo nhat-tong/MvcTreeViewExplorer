@@ -1,0 +1,18 @@
+﻿@model MvcTreeViewExplorer.Areas.Explorer.ViewModels.ExplorerViewModel
+
+<div id="treeViewRightCol" style="display:none">
+    <ul>
+        @Html.Partial("~/Areas/Explorer/Views/TreeView/_TreeView.cshtml", Model)
+    </ul>
+</div>
+
+<script>
+    $(function () {
+        var tree = new TreeView({
+            checkbox: false,
+            multiselection: false,
+            treeSelector: '@Model.Id'
+        });
+        tree.initialize();
+    });
+</script>

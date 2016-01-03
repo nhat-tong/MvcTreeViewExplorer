@@ -9,7 +9,7 @@ namespace MvcTreeViewExplorer.App_Start
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/bundles/css").Include(
-                "~/Content/boostrap.min.css",
+                "~/Content/bootstrap.min.css",
                 "~/Content/Site.css",
                 "~/Content/fancytree/ui.fancytree.min.css",
                 "~/Content/jquery-ui/jquery-ui.min.css",
@@ -23,7 +23,7 @@ namespace MvcTreeViewExplorer.App_Start
                          "~/Scripts/jquery-validate/jquery.validate.min.js",
                          "~/Scripts/jquery-validate/jquery.validate.unobtrusive.min.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/boostrap").Include(
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Scripts/boostrap/bootstrap.min.js",
                         "~/Scripts/modernizr-2.6.2.js"));
 
