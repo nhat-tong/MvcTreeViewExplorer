@@ -20,8 +20,8 @@
 @Html.Script(
     @<script>
         var tree = new TreeView({
-            checkbox: false,
-            multiselection: false,
+            checkbox: true,
+            hierarchical: true,
             treeId: '#@Model.Id'
         });
         tree.initialize();
